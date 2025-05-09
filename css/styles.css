@@ -1,0 +1,128 @@
+* { font-family: 'Ubuntu Condensed', sans-serif !important; }
+
+:root {
+  --primary-color: #5f5c99;
+  --secondary-color: #a2a4cd;
+  --bg-color: #b8bacd;
+  --text-color: #2f2f35;
+  --card-bg: #ffffff;
+  --radius: 0.5rem;
+}
+
+body {
+  background: linear-gradient(to bottom right, #c8cadf, var(--bg-color));
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+/* Navbar */
+.navbar { background-color: var(--primary-color) !important; }
+.brand-logo { height: 34px; max-width: 200px; object-fit: contain; }
+
+/* Layout: búsqueda + filtro */
+.container-fluid { max-width: 1200px; margin: 0 auto; }
+.container-fluid.d-flex { gap: 1rem; margin-bottom: 1rem; align-items: center; }
+.container-fluid .flex-grow-1 { flex: 1; }
+.container-fluid .category-filter { min-width: 300px; flex-shrink: 0; }
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+.card.show { opacity: 1; transform: translateY(0); }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Category badge */
+.category-badge {
+  background-color: #333;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: background-color 0.3s;
+}
+.category-badge:hover { background-color: #555; }
+
+/* Modal */
+.modal-content { border-radius: 1rem; border: none; }
+.modal-body img { margin-bottom: 1rem; }
+
+/* Sidebar carrito */
+.carrito-sidebar {
+  position: fixed; top: 0; right: 0;
+  width: 360px; height: 100%;
+  background: var(--card-bg);
+  padding: 1rem;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1055; overflow-y: auto;
+  min-height: 100vh;
+}
+.carrito-sidebar.show { transform: translateX(0); }
+
+.close-sidebar-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.cart-gif { width: 64px; height: auto; }
+
+/* Botones primarios */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: #48468b;
+  border-color: #48468b;
+}
+
+/* Accesibilidad */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Botón restar deshabilitado: no amarillo, cursor no permitido */
+.btn-outline-warning:disabled,
+.btn-outline-warning.disabled {
+  background-color: #f8f9fa !important;
+  color: #ccc !important;
+  border-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+/* Aumenta el tamaño de fuente del precio en las cards */
+.card-text.text-success {
+  font-size: 1.25rem; /* o el valor que prefieras, por ejemplo 1.5rem */
+  font-weight: 600;   /* opcional: hacerlo un poco más destacado */
+}
+
+#precioModal {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Limita el ancho del buscador */
+#searchForm .input-group {
+  max-width: 800px;  /* ajusta a tu gusto */
+  width: 100%;
+}
+
+
