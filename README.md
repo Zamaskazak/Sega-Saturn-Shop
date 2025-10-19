@@ -1,3 +1,1 @@
-Hola!!!!
-
-Este projecto es sobre una tienda de E-Commerce llamada SEGA SATURN (Si, igual que la consola).
+This project involves developing a SEGA-themed online store website, combining retro design with a modern shopping experience. The site will feature an interface reminiscent of the SEGA Saturn and Dreamcast era, incorporating colors, fonts, and visual elements characteristic of the brand.
